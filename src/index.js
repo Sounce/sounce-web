@@ -1,13 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
 // import App from './App';
-import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from "./serviceWorker";
 
-import * as tf from '@tensorflow/tfjs';
+import * as tf from "@tensorflow/tfjs";
 
 class MainApp extends React.Component {
-  videoRef = React.createRef();
+  /*videoRef = React.createRef();
   canvasRef = React.createRef();
 
    componentDidMount() {
@@ -59,7 +59,7 @@ class MainApp extends React.Component {
   renderPredictions = predictions => {
     console.log(predictions);
   };
-
+*/
   render() {
     return (
       <div>
@@ -83,7 +83,7 @@ class MainApp extends React.Component {
   }
 }
 
-ReactDOM.render(<MainApp />, document.getElementById('root'));
+ReactDOM.render(<MainApp />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
