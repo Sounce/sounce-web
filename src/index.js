@@ -5,6 +5,7 @@ import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 
 import * as tf from "@tensorflow/tfjs";
+import App from "./App";
 
 class MainApp extends React.Component {
   /*videoRef = React.createRef();
@@ -83,7 +84,7 @@ class MainApp extends React.Component {
   }
 }
 
-ReactDOM.render(<MainApp />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
