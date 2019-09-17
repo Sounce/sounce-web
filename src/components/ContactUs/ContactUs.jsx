@@ -21,7 +21,7 @@ const ContactUs = props => {
         </FormControl>
         <FormControl>
           <InputLabel htmlFor="Email">Email</InputLabel>
-          <Input id="Email"></Input>
+          <Input type="email" id="Email"></Input>
         </FormControl>
         <FormControl>
           <FormLabel htmlFor="Message">Message</FormLabel>
