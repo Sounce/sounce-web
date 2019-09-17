@@ -1,5 +1,7 @@
 import React from "react";
-
-const AboutUs = props => {};
+import { Typography, Button } from "@material-ui/core";
+const AboutUs = props => {
+  return null;
+};
 
 export default AboutUs;
