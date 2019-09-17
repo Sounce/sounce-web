@@ -1,6 +1,7 @@
 import React from "react";
 import { Typography, Button } from "@material-ui/core";
 import Section from "../core/Section";
+import H1 from "../core/H1";
 const Welcome = props => {
   return (
     <Section
@@ -9,9 +10,7 @@ const Welcome = props => {
           "linear-gradient(to bottom,#94e1ff 0%, rgba(255,255,255,1) 100%)"
       }}
     >
-      <Typography variant="h1" style={{ color: "white", fontWeight: 600 }}>
-        Speak without bounds
-      </Typography>
+      <H1> Speak without bounds</H1>
       <Button
         color="primary"
         size="large"

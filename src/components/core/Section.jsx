@@ -1,11 +1,12 @@
 import React from "react";
 const Section = props => {
+  const height = 700;
   return (
     <div
       style={{
         display: "flex",
         flexDirection: "column",
-        height: "500px",
+        height: `${height}px`,
         justifyContent: "space-evenly",
         alignItems: "center",
         ...props.style

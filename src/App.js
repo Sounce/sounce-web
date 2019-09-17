@@ -2,10 +2,11 @@ import React from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Welcome from "./components/Welcome/Welcome";
-import Camera from "./components/Camera/Camera";
+import TryItOut from "./components/TryItOut/TryItOut";
 import ContactUs from "./components/ContactUs/ContactUs";
-import AboutUs from "./components/AboutUs/AboutUs";
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core";
+import Motivation from "./components/Motivation/Motivation";
+import HowToUse from "./components/HowToUse/HowToUse";
 
 function App() {
   const theme = createMuiTheme({
@@ -30,8 +31,9 @@ function App() {
       <div className="App">
         <Header />
         <Welcome />
-        <AboutUs />
-        <Camera />
+        <HowToUse />
+        <Motivation />
+        <TryItOut />
         <ContactUs />
       </div>
     </MuiThemeProvider>
