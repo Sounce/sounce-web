@@ -2,15 +2,18 @@ import React from "react";
 import { Typography, Button } from "@material-ui/core";
 import Section from "../core/Section";
 import H1 from "../core/H1";
+import bg from "./bg.jpg";
 const Welcome = props => {
   return (
     <Section
       style={{
-        background:
-          "linear-gradient(to bottom,#94e1ff 0%, rgba(255,255,255,1) 100%)"
+        background: `url(${bg})`,
+        backgroundSize: "cover"
       }}
     >
-      <H1> Speak without bounds</H1>
+      <H1 style={{ filter: "brightness(200%) !important" }}>
+        Speak without bounds
+      </H1>
       <Button
         color="primary"
         size="large"

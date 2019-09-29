@@ -17,3 +17,8 @@ code {
   top: 0;
   left: 0;
 }
+.MuiAppBar-colorPrimary,
+.MuiButton-containedPrimary {
+  background-color: #010101 !important;
+  opacity: 0.9;
+}

@@ -13,11 +13,11 @@ const HowToUse = props => {
     "The program will display the translation"
   ];
   return (
-    <Section>
-      <H1 color="black">How to use</H1>
-      <div>
+    <Section style={{ textAlign: "left", backgroundColor: "#111111" }}>
+      <H1 color="white">How to use</H1>
+      <div style={{ width: "800px" }}>
         {howToUse.map((value, id) => (
-          <SubText key={id} variant="subtitle1">
+          <SubText key={id} variant="subtitle1" color="white">
             {id + 1}. {value}
           </SubText>
         ))}

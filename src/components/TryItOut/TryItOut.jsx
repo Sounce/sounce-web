@@ -59,21 +59,13 @@ const TryItOut = props => {
   // const renderPredictions = predictions => {
   //   console.log(predictions);
   // };
-
+  const videoWidth = 500;
   return (
     <Section>
       <H1 color="#acedfb">{headerTxt}</H1>
-      <div>
-        <video
-          className="size"
-          autoPlay
-          playsInline
-          muted
-          ref={videoRef}
-          width="600"
-          height="500"
-        />
-        <canvas className="size" ref={canvasRef} width="600" height="500" />
+      <div style={{ display: "flex", height: "500" }}>
+        <video autoPlay playsInline muted ref={videoRef} width={videoWidth} />
+        <canvas ref={canvasRef} width={videoWidth}></canvas>
       </div>
     </Section>
   );

@@ -8,8 +8,14 @@ import {
 } from "@material-ui/core";
 const Header = props => {
   return (
-    <AppBar position="static">
-      <Toolbar style={{ display: "flex", justifyContent: "space-between" }}>
+    <AppBar position="static" style={{ backgroundColor: "#000000 !important" }}>
+      <Toolbar
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          backgroundColor: "#000000 !important"
+        }}
+      >
         <Typography variant="h4">Sounce</Typography>
         <div
           style={{

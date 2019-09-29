@@ -7,6 +7,7 @@ const Section = props => {
         display: "flex",
         flexDirection: "column",
         height: `${height}px`,
+        minHeight: "100vh",
         justifyContent: "space-evenly",
         alignItems: "center",
         ...props.style
