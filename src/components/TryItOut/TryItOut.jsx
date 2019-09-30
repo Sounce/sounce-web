@@ -1,5 +1,6 @@
 import React from "react";
-import * as tf from "@tensorflow/tfjs";
+import * as handTrack from 'handtrackjs';
+
 
 import Section from "../core/Section";
 import H1 from "../core/H1";
@@ -11,6 +12,7 @@ const TryItOut = props => {
 
   React.useEffect(() => {
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    
       const webCamPromise = navigator.mediaDevices
         .getUserMedia({
           audio: false,
@@ -28,44 +30,32 @@ const TryItOut = props => {
           });
         });
 
-      // const modelPromise = tf.loadLayersModel("./model/model.json");
+       // Load the model. 
+       const modelPromise = handTrack.load();
+       console.log("model loaded")
 
-      // Promise.all([modelPromise, webCamPromise])
-      //   .then(values => {
-      //     detectFrame(videoRef.current, values[0]);
-      //   })
-      //   .catch(error => {
-      //     console.error(error);
-      //   });
+       Promise.all([modelPromise, webCamPromise])
+        .then(values => {
+          values[0].detect(this.videoRef.current).then(predictions => {
+            console.log('Predictions: ', predictions);
+            const context = document.getElementById('canvas-web').getContext('2d'); 
+            values[0].renderPredictions(predictions, canvasRef, context, this.videoRef.current)
+          });
+        })
+        .catch(error => {
+          console.error(error);
+        });
+
     }
   }, []);
 
-  // const detectFrame = (video, model) => {
-  //   console.log(video);
-
-  //   let tensor = tf
-  //     .fromPixels(video)
-  //     .resizeNearestNeighbor([224, 224])
-  //     .toFloat();
-
-  //   model.predict(tensor).then(predictions => {
-  //     console.log(this.renderPredictions(predictions));
-  //     requestAnimationFrame(() => {
-  //       this.detectFrame(video, model);
-  //     });
-  //   });
-  // };
-
-  // const renderPredictions = predictions => {
-  //   console.log(predictions);
-  // };
   const videoWidth = 500;
   return (
     <Section>
       <H1 color="#acedfb">{headerTxt}</H1>
       <div style={{ display: "flex", height: "500" }}>
         <video autoPlay playsInline muted ref={videoRef} width={videoWidth} />
-        <canvas ref={canvasRef} width={videoWidth}></canvas>
+        <canvas ref={canvasRef} width={videoWidth} id="canvas-web"></canvas>
       </div>
     </Section>
   );
