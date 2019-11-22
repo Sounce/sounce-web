@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
+}
+body {
+  background: black;
+}
+ul {
+  list-style-type: none;
+}
+nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: white;
+}
+nav ul {
+  display: flex;
+  height: initial;
+  opacity: 1;
+  justify-content: space-around;
+  align-items: baseline;
+  padding: 20px 0px 20px 0px;
+  font-family: Roboto Condensed;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  transition: 0.5s;
+}
+nav ul li {
+  font-size: 20px;
+  text-align: center;
+}
+.logo {
+  font-size: 40px;
+  font-family: Roboto Condensed;
+  font-style: normal;
+  font-weight: normal;
+
+  line-height: 41px;
+  /* identical to box height */
+
+  letter-spacing: 0.14em;
+}
+main {
+  margin: 100px 0px;
+}
+img {
+  background: white;
+}
+section {
+  width: 90%;
+  margin: 50px auto;
+}
+section img {
+  flex-basis: 300px;
+}
+section span {
+  font-size: 20px;
+  line-height: 1.5;
+  flex-basis: calc(90% - 300px);
+}
+.section-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+a {
+  text-decoration: none;
+}
+h3 {
+  text-align: center;
+  font-size: 30px;
+  padding: 0px 0px 50px 0px;
+}
+footer {
+  text-align: center;
+  padding: 25px 0px;
+}
+section:nth-child(2n) {
+  text-align: right;
+}
+a::after {
+  display: block;
+  position: relative;
+  top: 10px;
+  content: "";
+  height: 2px;
+  width: 0%;
+  background: white;
+  transition: 0.5s;
+}
+a:hover::after {
+  width: 100%;
+}
+#burger {
+  display: none;
+}
+.burger-logo {
+  display: none;
+  margin: 40px auto 20px;
+}
+.burger-div {
+  display: flex;
+}
+.burger-div span {
+  position: absolute;
+  top: 10px;
+  width: 20px;
+  height: 1px;
+  background: white;
+  transition: 0.5s;
+}
+span:first-child {
+  top: 3px;
+}
+span:last-child {
+  top: 17px;
+}
+.burger-div label {
+  display: none;
+}
+.showmenu {
+  opacity: 1;
+
+  height: 400px;
+}
+
+@media only screen and (max-width: 992px) {
+  nav ul {
+    height: 0px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+    padding: 0px;
+  }
+  nav ul li {
+    padding: 20px;
+  }
+  .logo {
+    display: none;
+  }
+  .burger-logo {
+    display: initial;
+  }
+  .burger-div label {
+    display: initial;
+    position: absolute;
+    top: 48px;
+    right: 70px;
+  }
+  input:checked + label span {
+    opacity: 0;
+  }
+  input:checked + label span:first-child {
+    opacity: 1;
+    transform: rotate(405deg);
+    top: 11px;
+  }
+  input:checked + label span:last-child {
+    opacity: 1;
+    transform: rotate(-405deg);
+    top: 11px;
+  }
+  main {
+    margin: 0px;
+  }
+  .hidemenu li {
+    opacity: 0;
+    height: 0px;
+    padding: 0px;
+    display: none;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .burger-logo {
+    margin: 40px auto 20px 40px;
+  }
+  .burger-div label {
+    display: initial;
+    position: absolute;
+    top: 48px;
+    right: 7i 0px;
+  }
+}
